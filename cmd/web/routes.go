@@ -3,7 +3,7 @@ package main
 import (
 	"net/http"
 
-	// "github.com/Caps1d/Portfolio/ui"
+	"github.com/Caps1d/Portfolio/ui"
 	"github.com/julienschmidt/httprouter"
 )
 
@@ -16,8 +16,8 @@ func (app *application) routes() http.Handler {
 	})
 
 	// embedded file server handler
-	// fileServer := http.FileServer(http.FS(ui.Files))
-	// router.Handler(http.MethodGet, "/static/*filepath", fileServer)
+	fileServer := http.FileServer(http.FS(ui.Files))
+	router.Handler(http.MethodGet, "/static/*filepath", fileServer)
 
 	// routes
 	router.HandlerFunc(http.MethodGet, "/", app.home)
