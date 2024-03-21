@@ -1,18 +1,13 @@
 <script>
 	import '../app.css';
-	import { MenuIcon } from 'lucide-svelte';
 	import { Navlink, MobileMenu } from '$components';
 </script>
 
 <header class="fixed top-0 z-10 w-full">
 	<div class="mx-auto max-w-2xl px-4 pt-8">
 		<div class="flex w-full justify-between md:hidden">
-			<div>
-				<a href="/">Yesme</a>
-			</div>
-			<MobileMenu>
-				<MenuIcon class="square-5" />
-			</MobileMenu>
+			<div class="flex items-center justify-center"></div>
+			<MobileMenu></MobileMenu>
 		</div>
 		<div class="hidden w-full justify-center md:flex">
 			<div class="flex justify-center rounded-full border border-navy-200/10 bg-white/5 p-1">
