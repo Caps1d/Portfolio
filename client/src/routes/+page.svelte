@@ -17,7 +17,7 @@
 	});
 </script>
 
-<div class="flex flex-col justify-center px-2 pt-10 md:mx-auto md:max-w-3xl md:pt-32">
+<div class="flex flex-col justify-center px-2 pt-6 md:mx-auto md:max-w-3xl md:pt-12">
 	<!-- profile card container -->
 	<ProfileCard />
 	<div class="flex flex-col pt-20">
