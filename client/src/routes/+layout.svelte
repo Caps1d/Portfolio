@@ -3,6 +3,16 @@
 	import { Navlink, MobileMenu } from '$components';
 </script>
 
+<svelte:head>
+	<link
+		rel="preload"
+		href="/fonts/inter-var-latin.woff2"
+		as="font"
+		type="font/woff2"
+		crossOrigin="anonymous"
+	/>
+</svelte:head>
+
 <header class="fixed top-0 z-10 w-full">
 	<div class="mx-auto max-w-2xl px-4 pt-8">
 		<div class="flex w-full justify-between md:hidden">
