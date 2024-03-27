@@ -23,7 +23,7 @@
 		<div class="hidden w-full justify-center md:flex">
 			<div class="flex justify-center rounded-full border border-navy-200/10 bg-white/5 p-1">
 				<Navlink href="/">Home</Navlink>
-				<Navlink href="/blog">Blog</Navlink>
+				<!-- <Navlink href="/blog">Blog</Navlink> -->
 				<Navlink href="/projects">Projects</Navlink>
 				<Navlink href="/github">GitHub</Navlink>
 			</div>

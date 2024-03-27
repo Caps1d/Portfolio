@@ -15,8 +15,8 @@
 	let rotation = 0;
 	let button: HTMLButtonElement | undefined;
 
-	$: if ($open && button) {
-		rotation += 360;
+	$: if (($open || !$open) && button) {
+		rotation += $open ? 360 : -360;
 		button.style.transform = `rotate(${rotation}deg)`;
 	}
 </script>

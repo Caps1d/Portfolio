@@ -1,14 +1,28 @@
 <script lang="ts">
 	import ProfileCard from '$components/ProfileCard.svelte';
 	import { onMount } from 'svelte';
-	import { Github } from 'lucide-svelte';
+	import { projects as _projects } from '$lib';
+	import { StatusRing } from '$components';
 
 	type Repo = {
 		name: string;
 		description: string;
 		html_url: string;
 	};
+
 	let repos: Repo[] = [];
+
+	let projects = _projects;
+	let activeTab = 'all';
+
+	function handleChangeTab(tab: string) {
+		activeTab = tab;
+		if (tab === 'all') {
+			projects = _projects;
+			return;
+		}
+		projects = _projects.filter((p) => p.type === tab);
+	}
 
 	onMount(async () => {
 		const response = await fetch('https://api.github.com/users/Caps1d/repos');
@@ -22,8 +36,7 @@
 	<ProfileCard />
 	<div class="flex flex-col pt-20">
 		<!-- gitHub repo's -->
-		<div class="flex flex-row justify-start gap-2">
-			<Github />
+		<div>
 			<p>My Repo's</p>
 		</div>
 		<div class="grid grid-cols-1 gap-6 pt-4 md:grid-cols-2">
@@ -42,6 +55,61 @@
 			{/each}
 		</div>
 	</div>
+	<!-- Projects -->
+	<div class="pt-20">
+		<p>Projects</p>
+		<!-- buttons - tabs -->
+		<div
+			class="flex w-full flex-row items-center justify-center gap-5 px-2 pt-6 md:mx-auto md:max-w-3xl md:pt-1"
+		>
+			<div class="flex gap-5 rounded-full border border-navy-200/10 bg-neutral-950 px-3 py-1">
+				<button
+					class="tab"
+					class:active={activeTab === 'all'}
+					on:click={() => handleChangeTab('all')}>All</button
+				>
+				<button
+					class="tab"
+					class:active={activeTab === 'data'}
+					on:click={() => handleChangeTab('data')}>Data</button
+				>
+				<button
+					class="tab"
+					class:active={activeTab === 'web'}
+					on:click={() => handleChangeTab('web')}>Web</button
+				>
+			</div>
+		</div>
+		<!-- grid -->
+		<div class="grid grid-cols-1 pt-2">
+			{#each projects as project}
+				<div
+					class="flex items-center justify-between border-t border-navy-200/10 py-4 first:border-t-transparent"
+				>
+					<!-- left side  -->
+					<div>
+						<!-- status & name  -->
+						<div class="flex items-center gap-1">
+							<StatusRing status={project.status} />
+							<p>{project.name}</p>
+						</div>
+						<!-- desc & year -->
+						<div class="flex items-center gap-1 pt-4 text-sm">
+							<p class="text-stone-300">{project.description}</p>
+							<p>&middot;</p>
+							<p class="text-stone-300">{project.year}</p>
+						</div>
+					</div>
+					<!-- right side   -->
+					<div
+						class="rounded-full border border-navy-200/10 p-2 px-3 text-sm leading-none hover:bg-white/5"
+					>
+						<a href="www">View Project</a>
+					</div>
+				</div>
+			{/each}
+		</div>
+	</div>
 	<!-- Now -->
 	<div class="pt-20">
 		<p>Now</p>
@@ -51,9 +119,23 @@
 	<div class="pb-10 pt-20">
 		<p>Connect</p>
 		<p class="pt-4 text-stone-300">
-			Reach me via <a href="https://www.linkedin.com/in/yegor-s/" class="text-sky-200">LinkedIn</a>
+			Reach me via <a href="https://www.linkedin.com/in/yegor-s/" class="link">LinkedIn</a>
 			or
-			<a href="ye.smertenko@gmail.com">email</a>
+			<a href="mailto:ye.smertenko@gmail.com" class="link">email</a>
 		</p>
 	</div>
 </div>
+
+<style lang="postcss">
+	.active {
+		@apply !opacity-100;
+	}
+
+	.tab {
+		@apply p-1 opacity-40;
+	}
+
+	.link {
+		@apply text-sky-200 hover:underline hover:underline-offset-4;
+	}
+</style>
