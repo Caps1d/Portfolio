@@ -59,7 +59,11 @@
 							<!-- status & name  -->
 							<div class="flex items-center gap-1">
 								<StatusRing status={project.status} />
-								<a href={project.name.toLowerCase()}>{project.name}</a>
+								{#if project.hasPage}
+									<a href={project.name.toLowerCase()}>{project.name}</a>
+								{:else}
+									<p>{project.name}</p>
+								{/if}
 							</div>
 							<!-- desc & year -->
 							<div class="flex items-center gap-1 pt-4 text-sm">
