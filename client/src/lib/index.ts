@@ -7,6 +7,7 @@ type Project = {
   description: string;
   status: Status;
   year: string;
+  link: string;
 };
 
 export type Status = 'completed' | 'in-progress' | 'archived';
@@ -16,9 +17,10 @@ export let projects: Project[] = [
     id: 'proj-1',
     type: 'data',
     name: 'WarHazard',
-    description: 'Armed conflict data visualization',
+    description: 'Armed conflict data analysis & visualization',
     status: 'completed',
-    year: '2023'
+    year: '2023',
+    link: 'https://www.warhazard-ua.com/'
   },
   {
     id: 'proj-2',
@@ -26,7 +28,8 @@ export let projects: Project[] = [
     name: 'SnippetBox',
     description: 'Blog-like web app written in Go',
     status: 'completed',
-    year: '2023'
+    year: '2023',
+    link: 'https://github.com/Caps1d/Lets-Go/tree/main'
   },
   {
     id: 'proj-3',
@@ -34,6 +37,7 @@ export let projects: Project[] = [
     name: 'GoShip',
     description: 'Deployment tool written in Go',
     status: 'in-progress',
-    year: '2024'
+    year: '2024',
+    link: ''
   }
 ];

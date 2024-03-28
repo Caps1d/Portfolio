@@ -31,7 +31,7 @@
 	});
 </script>
 
-<div class="flex flex-col justify-center px-2 pt-6 md:mx-auto md:max-w-3xl md:pt-12">
+<div class="flex flex-col justify-center px-2 pt-4 md:mx-auto md:max-w-3xl md:pt-6">
 	<!-- profile card container -->
 	<ProfileCard />
 	<div class="flex flex-col pt-20">
@@ -49,7 +49,7 @@
 				>
 					<p>{repo.name}</p>
 					{#if repo.description}
-						<p class="pt-2 text-stone-300">{repo.description}</p>
+						<p class="pt-2 text-plain-400">{repo.description}</p>
 					{/if}
 				</a>
 			{/each}
@@ -62,7 +62,7 @@
 		<div
 			class="flex w-full flex-row items-center justify-center gap-5 px-2 pt-6 md:mx-auto md:max-w-3xl md:pt-1"
 		>
-			<div class="flex gap-5 rounded-full border border-navy-200/10 bg-neutral-950 px-3 py-1">
+			<div class="flex gap-5 rounded-full border border-navy-200/10 px-3 py-1">
 				<button
 					class="tab"
 					class:active={activeTab === 'all'}
@@ -91,34 +91,29 @@
 						<!-- status & name  -->
 						<div class="flex items-center gap-1">
 							<StatusRing status={project.status} />
-							<p>{project.name}</p>
+							<a href={project.name.toLowerCase()}>{project.name}</a>
 						</div>
 						<!-- desc & year -->
 						<div class="flex items-center gap-1 pt-4 text-sm">
-							<p class="text-stone-300">{project.description}</p>
+							<p class="text-plain-400">{project.description}</p>
 							<p>&middot;</p>
-							<p class="text-stone-300">{project.year}</p>
+							<p class="text-plain-400">{project.year}</p>
 						</div>
 					</div>
 					<!-- right side   -->
 					<div
 						class="rounded-full border border-navy-200/10 p-2 px-3 text-sm leading-none hover:bg-white/5"
 					>
-						<a href="www">View Project</a>
+						<a href={project.link}>View Project</a>
 					</div>
 				</div>
 			{/each}
 		</div>
 	</div>
-	<!-- Now -->
-	<div class="pt-20">
-		<p>Now</p>
-		<p class="pt-4 text-stone-300">Section explaining my developer's path and passion</p>
-	</div>
 	<!-- Connect -->
 	<div class="pb-10 pt-20">
 		<p>Connect</p>
-		<p class="pt-4 text-stone-300">
+		<p class="pt-4 text-plain-400">
 			Reach me via <a href="https://www.linkedin.com/in/yegor-s/" class="link">LinkedIn</a>
 			or
 			<a href="mailto:ye.smertenko@gmail.com" class="link">email</a>
