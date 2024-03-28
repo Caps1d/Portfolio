@@ -104,7 +104,7 @@
 		<p class="pt-4 text-plain-400">
 			Reach me via <a href="https://www.linkedin.com/in/yegor-s/" class="link">LinkedIn</a>
 			or
-			<a href="mailto:ye.smertenko@gmail.com" class="link">email</a>
+			<a href="mailto:hello@yesme.dev" class="link">email</a>
 		</p>
 	</div>
 </div>
