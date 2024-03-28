@@ -2,9 +2,9 @@
 	import { ArrowUpLeft } from 'lucide-svelte';
 </script>
 
-<div class="mx-auto flex flex-row items-start justify-center gap-10 pt-10 md:gap-32">
+<div class="mx-auto grid max-w-3xl grid-cols-1 gap-10 pt-10 lg:gap-32">
 	<!-- go back link -->
-	<a href="/" class="relative flex gap-2 text-plain-200/90">
+	<a href="/" class="flex gap-2 text-plain-200/90 lg:fixed lg:left-[calc((100vw-768px)/2-180px)]">
 		<span>
 			<ArrowUpLeft class="square-6" />
 		</span>

@@ -1,16 +1,10 @@
 <script lang="ts">
 	import ProfileCard from '$components/ProfileCard.svelte';
-	import { onMount } from 'svelte';
 	import { projects as _projects } from '$lib';
 	import { StatusRing } from '$components';
+	import type { PageData } from './$types';
 
-	type Repo = {
-		name: string;
-		description: string;
-		html_url: string;
-	};
-
-	let repos: Repo[] = [];
+	export let data: PageData;
 
 	let projects = _projects;
 	let activeTab = 'all';
@@ -23,12 +17,6 @@
 		}
 		projects = _projects.filter((p) => p.type === tab);
 	}
-
-	onMount(async () => {
-		const response = await fetch('https://api.github.com/users/Caps1d/repos');
-		repos = await response.json();
-		console.log(repos);
-	});
 </script>
 
 <div class="flex flex-col justify-center px-2 pt-4 md:mx-auto md:max-w-3xl md:pt-6">
@@ -40,7 +28,7 @@
 			<p>My Repo's</p>
 		</div>
 		<div class="grid grid-cols-1 gap-6 pt-4 md:grid-cols-2">
-			{#each repos as repo}
+			{#each data.repos as repo}
 				<a
 					href={repo.html_url}
 					target="_blank"
