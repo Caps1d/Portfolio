@@ -23,8 +23,63 @@
 	<!-- profile card container -->
 	<ProfileCard />
 	<div class="flex flex-col pt-20">
+		<!-- Projects -->
+		<div class="">
+			<p>Projects</p>
+			<!-- buttons - tabs -->
+			<div
+				class="flex w-full flex-row items-center justify-center gap-5 px-2 pt-6 md:mx-auto md:max-w-3xl md:pt-1"
+			>
+				<div class="flex gap-5 rounded-full border border-navy-200/10 px-3 py-1">
+					<button
+						class="tab"
+						class:active={activeTab === 'all'}
+						on:click={() => handleChangeTab('all')}>All</button
+					>
+					<button
+						class="tab"
+						class:active={activeTab === 'data'}
+						on:click={() => handleChangeTab('data')}>Data</button
+					>
+					<button
+						class="tab"
+						class:active={activeTab === 'web'}
+						on:click={() => handleChangeTab('web')}>Web</button
+					>
+				</div>
+			</div>
+			<!-- grid -->
+			<div class="grid grid-cols-1 pt-2">
+				{#each projects as project}
+					<div
+						class="flex items-center justify-between border-t border-navy-200/10 py-4 first:border-t-transparent"
+					>
+						<!-- left side  -->
+						<div>
+							<!-- status & name  -->
+							<div class="flex items-center gap-1">
+								<StatusRing status={project.status} />
+								<a href={project.name.toLowerCase()}>{project.name}</a>
+							</div>
+							<!-- desc & year -->
+							<div class="flex items-center gap-1 pt-4 text-sm">
+								<p class="text-plain-400">{project.description}</p>
+								<p>&middot;</p>
+								<p class="text-plain-400">{project.year}</p>
+							</div>
+						</div>
+						<!-- right side   -->
+						<div
+							class="rounded-full border border-navy-200/10 p-2 px-3 text-sm leading-none hover:bg-white/5"
+						>
+							<a href={project.link}>View Project</a>
+						</div>
+					</div>
+				{/each}
+			</div>
+		</div>
 		<!-- gitHub repo's -->
-		<div>
+		<div class="pt-20">
 			<p>My Repo's</p>
 		</div>
 		<div class="grid grid-cols-1 gap-6 pt-4 md:grid-cols-2">
@@ -40,61 +95,6 @@
 						<p class="pt-2 text-plain-400">{repo.description}</p>
 					{/if}
 				</a>
-			{/each}
-		</div>
-	</div>
-	<!-- Projects -->
-	<div class="pt-20">
-		<p>Projects</p>
-		<!-- buttons - tabs -->
-		<div
-			class="flex w-full flex-row items-center justify-center gap-5 px-2 pt-6 md:mx-auto md:max-w-3xl md:pt-1"
-		>
-			<div class="flex gap-5 rounded-full border border-navy-200/10 px-3 py-1">
-				<button
-					class="tab"
-					class:active={activeTab === 'all'}
-					on:click={() => handleChangeTab('all')}>All</button
-				>
-				<button
-					class="tab"
-					class:active={activeTab === 'data'}
-					on:click={() => handleChangeTab('data')}>Data</button
-				>
-				<button
-					class="tab"
-					class:active={activeTab === 'web'}
-					on:click={() => handleChangeTab('web')}>Web</button
-				>
-			</div>
-		</div>
-		<!-- grid -->
-		<div class="grid grid-cols-1 pt-2">
-			{#each projects as project}
-				<div
-					class="flex items-center justify-between border-t border-navy-200/10 py-4 first:border-t-transparent"
-				>
-					<!-- left side  -->
-					<div>
-						<!-- status & name  -->
-						<div class="flex items-center gap-1">
-							<StatusRing status={project.status} />
-							<a href={project.name.toLowerCase()}>{project.name}</a>
-						</div>
-						<!-- desc & year -->
-						<div class="flex items-center gap-1 pt-4 text-sm">
-							<p class="text-plain-400">{project.description}</p>
-							<p>&middot;</p>
-							<p class="text-plain-400">{project.year}</p>
-						</div>
-					</div>
-					<!-- right side   -->
-					<div
-						class="rounded-full border border-navy-200/10 p-2 px-3 text-sm leading-none hover:bg-white/5"
-					>
-						<a href={project.link}>View Project</a>
-					</div>
-				</div>
 			{/each}
 		</div>
 	</div>
