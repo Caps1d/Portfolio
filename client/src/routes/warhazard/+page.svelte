@@ -6,7 +6,7 @@
 	<!-- go back link -->
 	<a
 		href="/"
-		class="text-plain-200/90 flex items-center gap-2 lg:fixed lg:left-[calc((100vw-768px)/2-180px)]"
+		class="flex items-center gap-2 text-plain-200/90 lg:fixed lg:left-[calc((100vw-768px)/2-180px)]"
 	>
 		<span class="pb-1">
 			<Undo2 class="square-4" />
@@ -17,8 +17,8 @@
 	</a>
 	<!-- article -->
 	<article class="prose lg:prose-xl">
-		<h4 class="text-plain-200 font-serif font-light italic">WarHazard</h4>
-		<div class="text-plain-400 text-base">
+		<h4 class="font-serif font-light italic text-plain-200">WarHazard</h4>
+		<div class="text-base text-plain-400">
 			<p>
 				The aim of this project was to provide a hazard score for all locations in Ukraine that were
 				involved in war-related events such as battles, explosions/remote violence events, violence
