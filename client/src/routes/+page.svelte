@@ -67,7 +67,7 @@
 							</div>
 							<!-- desc & year -->
 							<div class="flex flex-col gap-1 pt-4 text-sm md:flex-row">
-								<p class="text-plain-400 md:flex">{project.description} &middot;</p>
+								<p class="hidden text-plain-400 md:flex">{project.description} &middot;</p>
 								<p class="text-plain-400">{project.year}</p>
 							</div>
 						</div>
@@ -83,10 +83,17 @@
 		</div>
 		<!-- gitHub repo's -->
 		<div class="pt-20">
-			<p>My Repo's</p>
+			<a
+				href="https://github.com/Caps1d?tab=repositories"
+				target="_blank"
+				rel="refnoopener"
+				class="hover:underline hover:underline-offset-4"
+			>
+				My Repo's
+			</a>
 		</div>
 		<div class="grid grid-cols-1 gap-6 pt-4 md:grid-cols-2">
-			{#each data.repos as repo}
+			{#each data.repos.slice(0, 4) as repo}
 				<a
 					href={repo.html_url}
 					target="_blank"
@@ -118,7 +125,7 @@
 	}
 
 	.tab {
-		@apply p-1 opacity-40;
+		@apply rounded p-1 opacity-40 transition-colors hover:!opacity-100 focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-sky-300;
 	}
 
 	.link {
