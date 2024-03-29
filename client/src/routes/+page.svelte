@@ -67,7 +67,10 @@
 							</div>
 							<!-- desc & year -->
 							<div class="flex flex-col gap-1 pt-4 text-sm md:flex-row">
-								<p class="hidden text-plain-400 md:flex">{project.description} &middot;</p>
+								<p class="text-plain-400 md:flex">
+									{project.description}
+									<span class="hidden md:inline"> &middot; </span>
+								</p>
 								<p class="text-plain-400">{project.year}</p>
 							</div>
 						</div>
