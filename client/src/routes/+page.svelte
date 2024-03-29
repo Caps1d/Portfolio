@@ -67,14 +67,13 @@
 							</div>
 							<!-- desc & year -->
 							<div class="flex flex-col gap-1 pt-4 text-sm md:flex-row">
-								<p class="hidden text-plain-400 md:flex">{project.description}</p>
-								<p class="hidden md:flex">&middot;</p>
-								<p class=" text-plain-400">{project.year}</p>
+								<p class="text-plain-400 md:flex">{project.description} &middot;</p>
+								<p class="text-plain-400">{project.year}</p>
 							</div>
 						</div>
 						<!-- right side   -->
 						<div
-							class="mx-auto rounded-full border border-navy-200/10 p-2 px-3 text-sm leading-none hover:bg-white/5"
+							class="shrink-0 rounded-full border border-navy-200/10 p-2 px-3 text-sm leading-none hover:bg-white/5"
 						>
 							<a href={project.link}>View Project</a>
 						</div>
