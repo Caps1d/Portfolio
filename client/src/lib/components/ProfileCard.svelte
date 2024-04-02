@@ -9,13 +9,17 @@
 		</div>
 		<div class="pt-20">
 			<p>Today</p>
-			<p class="pt-1 text-plain-400">
-				Driven developer with a flair for data and backend, rooted in a Molecular Biology
-				foundation. My journey includes uncovering data narratives for a Memorial Fundraiser and
-				video analytics for a computer vision startup. I took on a project processing conflict data
-				in Ukraine to generate hazard levels for locations via machine learning and introduced a
-				competitive live system to the PrairieLearn platform. Well-versed in Python, Go, JavaScript,
-				SQL, R and an array of data-focused tools
+			<p class="text-plain-400 pt-1 font-normal">
+				Despite the downturn in the tech market, I feel now is the perfect time for growth,
+				exploration, and software development. I spend my days learning and developing in Go,
+				exploring new research in deep learning, and working on open-source projects. I grew to
+				appreciate programming outside of University and found a great way to pass time. My
+				expertise lies in 'Data-driven development,' focusing on data analysis, visualization, and
+				backend development.
+			</p>
+			<p class="font-reader text-plain-400 pt-4 italic">
+				Note: A recent favorite discovery is the 'Go Time' podcast, which I highly recommend for
+				anyone curious about Go and programming in general.
 			</p>
 		</div>
 	</div>
