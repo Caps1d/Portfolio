@@ -31,7 +31,7 @@ export let projects: Project[] = [
     description: 'Blog-like web app written in Go',
     status: 'completed',
     year: '2023',
-    link: 'https://github.com/Caps1d/Lets-Go/tree/main',
+    link: 'https://snippetwall.yesme.dev/',
     hasPage: false
   },
   {
