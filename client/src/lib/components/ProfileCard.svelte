@@ -18,7 +18,7 @@
 				Go, JavaScript, TypeScript, Java, and Python. Outside of software development you can likely
 				catch me in the gym or playing volleyball with friends on the weekend.
 			</p>
-			<p>
+			<p class="pt-4 font-reader italic text-plain-400">
 				P.S: If you're into bodybuilding feel free to reach out as I'm looking for serious gym
 				friends here in Vancouver.
 			</p>
